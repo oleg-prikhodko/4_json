@@ -1,10 +1,10 @@
 # Prettify JSON
 
-Скрипт выводит отформатированное содержание файла с произвольными данными в формате JSON 
+Pretty print contents of an arbitrary JSON document
 
 # Quickstart
 
-Скрипт принимает на вход один аргумент - путь к файлу
+Program requires one argument - path to file to be printed
 
 Example of script launch on Linux, Python 3.5:
 
