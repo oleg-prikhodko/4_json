@@ -23,9 +23,5 @@ if __name__ == "__main__":
         pretty_print_json(json_data)
     except FileNotFoundError:
         sys.exit("No such file")
-    except OSError:
-        sys.exit("File cannot be opened")
-    except UnicodeDecodeError:
-        sys.exit("Not a text file")
     except json.JSONDecodeError:
         sys.exit("File contents is not a valid JSON document")
