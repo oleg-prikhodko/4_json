@@ -2,15 +2,17 @@ import json
 import sys
 
 
-def load_data(filepath):
+def load_content_from_file(filepath):
     with open(filepath) as json_file:
-        json_data = json.load(json_file)
-        return json_data
+        decoded_file_content = json.load(json_file)
+        return decoded_file_content
 
 
-def pretty_print_json(json_data):
-    json_string = json.dumps(json_data, ensure_ascii=False, indent="\t")
-    print(json_string)
+def pretty_print(decoded_file_content):
+    prettified_string = json.dumps(
+        decoded_file_content, ensure_ascii=False, indent="\t"
+    )
+    print(prettified_string)
 
 
 if __name__ == "__main__":
@@ -19,8 +21,8 @@ if __name__ == "__main__":
 
     filename = sys.argv[1]
     try:
-        json_data = load_data(filename)
-        pretty_print_json(json_data)
+        decoded_file_content = load_content_from_file(filename)
+        pretty_print(decoded_file_content)
     except FileNotFoundError:
         sys.exit("No such file")
     except json.JSONDecodeError:
